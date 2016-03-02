@@ -1,9 +1,574 @@
-<html>
-<head>
-	<title>Alfred Shaker</title>
-</head>
-<body>
-<h1>Welcome to my Portfolio Website</h1>
-<p> !! -- Currently in progress -- !! </p>
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <title>Alfred Shaker</title>
+    </head>
+<body style="background:#191F30; color:#AEBCA8;">
+
+        <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="subMenu" style="background:#46BCBA;">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#sTop" style="color:#191F30;">Alfred Shaker</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#s1" style="color:#191F30;">Experience & Activities</a></li>
+            <li><a href="#s2" style="color:#191F30;">Games & Projects</a></li>
+            <!--<li><a href="#sContact" style="color:#191F30;">Contact Me</a></li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="section sTop" style="background:#191F30;">
+        <div class="inner">
+            <div class="container-fluid" ng-controller="myCtrl" style="font-size:125%;">
+                <!--
+                <div class="page-header text-center" style="background:white;">
+		          <h1>Alfred Shaker's Portfolio Website</h1> <small>Currently in progress </small>
+                </div>
+                -->
+        <div class="row">
+                <div class="col-xs-6 col-md-6 text-center">
+                    <h3 id="haircutTag">Welcome to my Website</h3>
+                    <img src="images/me_suit.jpg" class="img-circle" style="width: 240px; height: 240px;" />
+                    <br>
+                    <img src="images/me_grad.jpg" class="img-circle" style="width: 260px; height: 260px;" />
+                    <h3 id="gradTag">The Day of My Graduation</h3>
+                    <br>
+                    <h3 id="randomTag">Click a picture to learn more</h3>
+                    <div class="small-images">
+
+                        <img dir-paginate="image in images | itemsPerPage: pageSize" current-page="currentPage" ng-src="{{ image.src }}" class="img-circle" style="width:100px;height:100px;" name="{{ image.name }}" />
+                        <br />
+                        <img dir-paginate="otherImage in otherImages | itemsPerPage: pageSize" current-page="currentPage" ng-src="{{ otherImage.src }}" class="img-circle" style="width:100px;height:100px;" name="{{ otherImage.name }}" />
+												<br />
+												<dir-pagination-controls boundary-links="false" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+
+
+
+                        <!--
+                        <img src="images/winners.jpg" class="img-circle" style="width:100px;height:100px;" name="winners" />
+                        <br />
+                        <img src="images/altimer.jpg" class="img-circle" style="width:100px;height:100px;" name="altimer" />
+                        <img src="images/survivr.jpg" class="img-circle" style="width:100px;height:100px;" name="survivr" />
+                        -->
+
+                    </div>
+
+
+
+                </div>
+                    <div class="col-xs-6 col-md-6">
+                        <p>
+                            <strong>Name:</strong> {{firstName + " " + lastName}}
+                            <br>
+                            <strong>Date of Birth:</strong> April 6th 1994
+                            <br>
+                            <strong>GitHub</strong>
+                            <a href="http://www.github.com/alfred316">
+                                <img src="images/octobiwan.jpg" style="width:60px;height:60px;" class="img-circle"/>
+                            </a>
+                            <br>
+                            <strong>Devpost</strong>
+                            <a href="http://www.devpost.com/alfred316">
+                                <img src="images/devpost.jpg" style="width:60px;height:60px;" class="img-circle"/>
+                            </a>
+                            <br>
+                            Get my <strong><a href="https://www.dropbox.com/s/j85o3sl23l1x8r9/AlfredShakerResume.pdf?dl=0">Resume Here</a></strong><br>
+                            <strong><i>Education</i></strong><br>
+                            <img src="images/ksu_banner.jpg" class="img-rounded" style="width:520px; height: 100px;" />
+                            <br>
+                            Bachelor of Science in Computer Science, May 2015.<i> Kent State University. </i><small> Kent, Ohio, USA. Cumulative GPA: 3.30 </small>
+                            <br>
+                            Graduate student, Master of Science in Computer Science since August 2015. <i> Kent State University. </i><small> Kent, Ohio, USA </small>
+                            <br>
+                            <p>
+                                <strong>Special Skills:</strong><br>
+                                <ul>
+                                    <li>-Programming Languages: C++, C#, Java, PHP, C, HTML, JavaScript, CSS, Python, ObjectiveC</li>
+                                    <li>-Game Engines: Unreal Engine 4, Unity3D 5</li>
+                                    <li>-Computer Graphics: openGL, cuda</li>
+                                    <li>-Web Frameworks: ASP.NET, Laravel, Bootstrap, Angular.js</li>
+                                    <li>-Virtual Reality: Oculus Rift and Leap Motion</li>
+                                    <li>-Foreign Language Skills: Fluently read, write, and speak Arabic and English</li>
+                                </ul>
+                            </p>
+
+
+
+                            <div class="row">
+                                <div class="col-xs-6 col-md-6">
+                                    <div class="big-image">
+                                        <img src="images/htp.jpg" class="img-rounded img-responsive" style="width:460px;height:460px;" name="htp" />
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-6 col-md-6">
+                                    <p id="htp" class="text-center"><strong>Hack The Planet</strong><br>
+                                    I was personally invited to attend the first ever annual Hack The Planet,
+                                    organized by Major League Hacking, the leaders of the Hackathon
+                                    scene. This was due to my outstanding performance and attendance during the 2014-2015
+                                    hackathon season, as that was the season where I realyl started to shine,
+                                    placing in the top ten at MHacks IV, winning best mobile at HackCWRU, and many more.
+                                    </p>
+                                    <p id="winners" class="text-center"><strong>Grand Prize Winners at the Fashion Tech Hackathon</strong><br>
+                                    Here is a picture of my posing with my teammates after we picked up
+                                    the Grand Prize at the 3rd annual Kent State University Fashion Tech
+                                    Hackathon, during Spring of 2016. We made two projects, all under the
+                                    umbrella of Memory Technology. We created a way for you to not forget things
+                                    at home with the use of bluetooth beacons and a mobile app, and also a watch
+                                    that would help alzheimer's patients keep their mind trained and their
+                                    caretaker informed of their behaviors and their brain activity.
+                                    </p>
+                                    <p id="presentingLeap" class="text-center"><strong>Giving a Presentation about Leap Motion at HacKSU</strong><br>
+                                    After creating a shooting gallery game at Hack Illinois 2014, I was asked
+                                    by the leaders of Hacksu to give a presentation to the group, which
+                                    is Kent State's computer science and hacker group on campus. I was
+                                    more than happy to accept and present this awesome new technology
+                                    to everyone else so that they can start having fun with it too
+                                    and make awesome games and apps like me. I showed them a demo of my
+                                    shooting gallery game, in which your hand gestures allow you to aim
+                                    and shoot and reload your weapon. It's very cool.
+                                    </p>
+                                    <p id="hackcwru" class="text-center"><strong>Winner of Best Mobile App Award at HackCWRU</strong><br>
+                                    My project for the Hackathon held at Case Western Reserve University
+                                    was a mobile app that I developed along side with designer Matt
+                                    Allen and programmer Nic Linscott called Oh (on the android app store), that allows you to import
+                                    your favorite contacts and with a swipe left or right, you would sent them
+                                    one of two direct text messages: 'Here', or 'On My Way', which was
+                                    done to minimize texting while driving, which is when you would
+                                    have to send either of those texts most of the time. We won the
+                                    Best Mobile App award and I recieved a Nexus 7 tablet!
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+
+                        </p>
+                     </div>
+                </div>
+	       </div>
+        </div>
+    </div>
+
+    <div class="section s1" style="background:#2F5A5F;">
+        <div class="inner">
+            <div class="container-fluid">
+                <h1 class="text-center">Professional Experience</h1>
+                <p class="text-center">
+                    <strong>F&E Payment Pros.</strong><small> November 2015-Present</small>
+                    <br>
+                    <i>Kiosk Software Engineer</i>. Building and designing new software
+                    for payment kiosks using ASP.NET 5 MVC 6.
+                    <br><br>
+                    <strong>Paragon Software, LLC.</strong><small> June 2015-September 2015</small>
+                    <br>
+                    <i>Software Developer</i>. Developmed a web application using ASP.NET MVC hosted on Azure.
+                    <br><br>
+                </p>
+                <h1 class="text-center">Awards and Honors</h1>
+                <p class="text-center">
+                    <strong>Grand Prize Winner</strong>: <i>Fashion/Tech Hackathon at Kent State Univerisyt, 2015</i>
+                    <br>
+                    <strong>Top 10 Team out of over 240</strong>: <i>MHacks IV 2014</i>
+                    <br>
+                    <strong>Top 5 and best Leap Motion Hack</strong>: <i>Kent Hack Enough at Kent State University 2014</i>
+                    <br>
+                    <strong>Best Mobile App</strong>: <i>HackCWRU at Case Western Reserve University 2015</i>
+                    <br>
+                    <strong>Top 10 and Best Real World Application</strong>: <i>OH/IO 2015 at Ohio State University</i>
+                </p>
+                <h1 class="text-center">What do I do?</h1>
+                <div class="row">
+                    <div class="col-xs-4 col-md-4">
+                        <div class="panel panel-default text-center" style="background:#46BCBA; color:#191F30;">
+                            <div class="panel-title">
+                                <strong>Major League Hacker</strong>
+                            </div>
+                            <div class="panel-body">
+                                <img src="images/fashpin.jpg" style="width: 240px; height:240px" class="img-circle"/>
+                                <p>
+                                    <br>
+                                    <strong>I am a Major League Hacker!</strong>
+                                    <br>
+                                    I have attended and competed in
+                                    over 15 Hackathons in the last three
+                                    years. I have recently won the grand
+                                    prize at KSU's Fashion/Tech Hackathon,
+                                    on top of placing in the top 10 and winning
+                                    Best Real World Application at OH/IO 2015,
+                                    placing in the top 10 atMHacks IV,
+                                    Top 5 and winning Best Leap Hack
+                                    at KHE 2014, and winning Best Mobile Hack at
+                                    HackCWRU 2015. I was also personally invited
+                                    to participate in the first annual Hack The
+                                    Planet in Mountain View, California.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-md-4">
+                        <div class="panel panel-default text-center" style="background:#46BCBA; color:#191F30;">
+                                <div class="panel-title">
+                                    <strong>Radio Personality</strong>
+                                </div>
+                                <div class="panel-body">
+                                    <img src="images/radio.jpg" style="width:240px; height:240px;" class="img-circle"/>
+                                    <p>
+                                        <br>
+                                        <strong>I'm a Radio Host now!</strong>
+                                        <br>
+                                        I have recently started hosting a show on
+                                        internet radio website krmaradio.com called
+                                        Triple Z Game Show. My two co-hosts and I
+                                        spend our time on the air talking about and discussing
+                                        different things in regards to video games and the
+                                        game industry as a whole. My concentration during
+                                        my degree was in Game Programming, so I have quite a bit
+                                        of experience with making games, in addition to long years
+                                        of gaming. My co-hosts are also no strangers to games
+                                        or game development, as one of them graduated with game design
+                                        and the other with graphics design. We bring our experiences
+                                        and points of views to our listeners all over the world.
+                                    </p>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-md-4">
+                        <div class="panel panel-default text-center" style="background:#46BCBA; color:#191F30;">
+                            <div class="panel-body">
+                                <div class="panel-title">
+                                    <strong>Performer</strong>
+                                </div>
+                                <div class="panel-body">
+                                    <img src="images/myGuitar.jpg" style="width:240px; height:240px;" class="img-circle" />
+                                    <p>
+                                        <br>
+                                        <strong>I'm a Rockstar!</strong>
+                                        <br>
+                                        I started playing guitar during August of 2009, and since then
+                                        I have been in multiple bands, performed countless times as
+                                        a lead guitarist in bands in addition to playing solo shows
+                                        with me improvising over my own created backing tracks
+                                        and covering songs I like. I love performing and playing
+                                        music and somehow I want to incorporate it into what I
+                                        do for a living. Or at least keep on playing as long as I can.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section s2" style="background=#AEBCA8;">
+        <div class="inner">
+            <div class="container-fluid">
+                <h1 class="text-center">Games and Projects</h1>
+                <div class="row">
+                            <div class="col-xs-4 col-md-4">
+
+                                <h3 style="color:#2F8F75;">Capsul Man! My very first game project!</h3>
+
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/RoUkXre_CuQ" frameborder="0" allowfullscreen></iframe>
+
+                            </div>
+
+                            <div class="col-xs-2 col-md-2">
+                                <br><br><br>
+                                During the third year of my undergraduate studies,
+                                I took an Intro to Video Game Programming class that focused on
+                                Microsoft XNA and Unity3D. The final project was a Unity3D project,
+                                and due to some creative differences with my group, I ended up having
+                                to do a whole project alone in a week to get this in on time, and
+                                I couldn't have been more proud of what I have accomplished for that short
+                                amount of time and for this being my first ever game. It has two stages, a topdown/
+                                first parson shooter level and a 2-d side-scroller level. The game features
+                                AI that patrol and attack you when you're close, pickups that let you upgrade your
+                                weapon, health pickups, checkpoints, music, particle effects, and much more. Check out
+                                the video!
+                            </div>
+
+                            <div class="col-xs-4 col-md-4">
+                                <h3 style="color:#2F8F75;">Star Wars VR Pod Racer!</h3>
+
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/A_FvcxeZaqw" frameborder="0" allowfullscreen></iframe>
+
+                            </div>
+
+                            <div class="col-xs-2 col-md-2">
+                                <br><br><br>
+                                During BitCamp 2015, Matthew Allen and I really wanted to
+                                make something in the Unreal Engine, as we wanted to grow
+                                our potfolio of games made using it as well as our skills
+                                using the actual engine. So, we decided to have fun with it
+                                and make a Star Wars VR Pod Racing game. We even streamed our development
+                                live on twitch.tv and ended up on a VR news webside with an article written
+                                about our little game, which made us feel awesome! I programmed the game using
+                                Unreal Engine's visual scripting tool called blueprints, as it allowed for us
+                                to be able to prototype the game quicker and iterate faster for the short
+                                amount of time we had during the hackathon. We had a lot of fun making it,
+                                and we had features that included laps, best lap time, best total time,
+                                checkpoints, speed boosts, and hover mechanices. Check out the video, I hope you
+                                like it, and may the Force be with you!
+                            </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-4 col-md-4">
+
+                                <h3 style="color:#2F8F75;">LeapVR DJ! Be a Virtual DJ!</h3>
+
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/a4vPOb5D-ho" frameborder="0" allowfullscreen></iframe>
+
+                            </div>
+
+                            <div class="col-xs-2 col-md-2">
+                                <br><br><br>
+                                MHacks IV was a big hackathon for me. This was the first time
+                                that I used the Oculus Rift, and I actually met the CEO of Oculus
+                                at that hackathon. It was during the rise of popularity for the oculus,
+                                during the time of the DK2. The Oculus still was not that popular with
+                                the hackathon scene but it was starting to grow so we decided to hop on early
+                                and see what it's all about. It was amazing, and I loved developing with the oculus
+                                rift. I created the game using Unity3D and the game put you in the shoes of a DJ
+                                at a busy club featuring smoke machines, strobe lights, balls that shoot fire
+                                particles when you look at it, a minigame where you do certain gestures using the
+                                leap motion to get a score, and of course, the DJ part, which at this point
+                                was a button that altered the music and made it seem like you were
+                                a DJ applying effects to music. It was completely virtual as the use of the Leap
+                                motion controller meant you used your actual hands and saw them in the game,
+                                making it more immersive.
+                            </div>
+
+                            <div class="col-xs-4 col-md-4">
+                                <h3 style="color:#2F8F75;">DressYou, the virtual dressing room!</h3>
+
+                                <iframe width="420" height="315" src="https://www.youtube.com/embed/6ONBaY1HMQ8" frameborder="0" allowfullscreen></iframe>
+
+                            </div>
+
+                            <div class="col-xs-2 col-md-2">
+                                <br><br><br>
+                                This is a different kind of game. It's more of a "simulator". It was
+                                made with Unity3D, and the idea was to give women a model to look at
+                                and see how the clothes would look on them. For the purpose of the demo,
+                                we used a bodyscan of our team mate who was the person who came up
+                                with the idea, and we used models made of clothes that she designed fitted
+                                onto the model when the buttons are pressed. It's pretty simple, but the purpose
+                                was to have a proof of concept demo to present.
+                            </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-4 col-md-4">
+
+                                <h3 style="color:#2F8F75;">LeapShooter, shoot em up!</h3>
+
+                                <iframe width="420" height="315" src="https://www.youtube.com/embed/ihNSKBiXdTk" frameborder="0" allowfullscreen></iframe>
+
+                            </div>
+
+                            <div class="col-xs-2 col-md-2">
+                                <br><br><br>
+                                This was the first game that I made using the Leap Motion
+                                controller. This was the first time I delved into the realm of
+                                virtual reality. Using hand gestures as input instead of a controller
+                                or a keyboard and mouse is the coolest thing I've experienced in a while
+                                and only because it actually worked really well. The leap motion
+                                uses IR sensors that accurately capture each finger individually and each
+                                hand seperately and each gesture you do is easily recognized and turned into
+                                code using their brilliant API. So using this cool tech, I decided to make a
+                                fun western style shooter game with classic moving targets. Check our the video!
+                            </div>
+
+                            <div class="col-xs-4 col-md-4">
+                                <h3 style="color:#2F8F75;">SurfVR, surf's up, in VR!</h3>
+
+                                <img src="images/surfVr.jpg" class="img-rounded img-responsive" style="width:400px; height:400px;"/>
+
+                            </div>
+
+                            <div class="col-xs-2 col-md-2">
+                                <br><br><br>
+                                In the spirit of being in California for the first time and being
+                                personally invited to attend and take part in the first
+                                annual Hack the Planet, Matt Allen and I decided to make a Virtual
+                                Reality Surfing Experience, which came out of the thought that this
+                                is a sport that barely has any games on the market, and we could start
+                                something fresh. We used the Unreal Engine and made a game where you are a
+                                surfer on a surf board in the water going in the direction you look and
+                                collecting things out in the ocean that increase your score. It's a fun and
+                                immersive experience due to the brilliant bouancy effect of the water and the
+                                amazing visuals and lights effects of the Unreal Engine. Unfortunately I do not
+                                have a video of it, but here is a photo with a nice scene from the game!
+                            </div>
+
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+
+<!--
+    <div class="section s3">
+        <div class="inner">
+            <div class="container">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section sContact">
+        <div class="inner">
+            <div class="container">
+               <h1>Say Hi to me!</h1>
+                <div class="panel panel-default" style="background: #AEBCA8;">
+                    <div class="panel-body text-center" style="color:#191F30;">
+                        <form role="form" method="post" enctype="text/plain" action="sendEmail.php">
+
+                        <div class="form-group">
+                            Name: <input type="text" class="form-control" placeholder="Peter Parker" name="name" id="name" />
+                            <br>
+                        </div>
+
+                        <div class="form-group">
+                            Email: <input type="email" class="form-control" placeholder="foo@bar.com" name="email" id="email" />
+                            <br>
+                        </div>
+
+                        <div class="form-group">
+                            Message: <textarea rows="15" id="message" name="message" class="form-control">Hello Alfred, You're the best!
+                                -Your #1 Fan.
+                            </textarea>
+                        </div>
+
+                            <button type="submit" class="btn btn-success">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Alfred Shaker, Software Engineer.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- angularjs -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	    <script src="js/app.js" type="text/javascript"></script>
+
+        <script src="js/angular.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/jquery.smint.js" type="text/javascript"></script>
+        <script src="js/jquery.arctext.js" type="text/javascript"></script>
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript" src="js/dirPagination.js"></script>
+        <script type="text/javascript" src="js/dirPagination.spec.js"></script>
+
+        <script type="text/javascript">
+
+
+                   $('#winners').hide();
+                   $('#presentingLeap').hide();
+                   $('#hackcwru').hide();
+
+            $(function(){
+                $(".small-images img").click(function(e){
+                    //get the source of the small image
+                    var src = $(this).attr("src");
+                    //get the name of the small image
+                    var name = $(this).attr("name");
+                    //replace the src of the big image with that of the small image
+                    $(".big-image img").attr("src", src);
+                    //get the name of the old big image
+                    var oldName = $(".big-image img").attr("name");
+                    //use that name to hide the desc
+                    $('#' + oldName).hide();
+                    //replace the old name with the new name
+                    $(".big-image img").attr("name", name);
+                    //use new name to show new desc
+                    $('#' + name).show();
+
+
+                    e.preventDefault();
+                    return false;
+                });
+            });
+
+            var $haircutTag = $('#haircutTag').hide();
+            var $gradTag = $('#gradTag').hide();
+            var $randomTag = $('#randomTag').hide();
+
+            google.load('webfont','1');
+
+			google.setOnLoadCallback(function() {
+				WebFont.load({
+					google		: {
+						families	: ['Montserrat','Concert One']
+					},
+					fontactive	: function(fontFamily, fontDescription) {
+						init();
+					},
+					fontinactive	: function(fontFamily, fontDescription) {
+						init();
+					}
+				});
+			});
+
+            function init()
+            {
+                $haircutTag.show().arctext({radius:120});
+                $gradTag.show().arctext({radius:170, dir: -1});
+                $randomTag.show().arctext({radius:180});
+            }
+
+            $(document).ready(function(){
+               $('#subMenu').smint({
+                   'scrollSpeed' : 1000
+               });
+            });
+
+
+
+
+        </script>
+
 </body>
 </html>
