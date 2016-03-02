@@ -57,8 +57,8 @@
                         <img dir-paginate="image in images | itemsPerPage: pageSize" current-page="currentPage" ng-src="{{ image.src }}" class="img-circle" style="width:100px;height:100px;" name="{{ image.name }}" />
                         <br />
                         <img dir-paginate="otherImage in otherImages | itemsPerPage: pageSize" current-page="currentPage" ng-src="{{ otherImage.src }}" class="img-circle" style="width:100px;height:100px;" name="{{ otherImage.name }}" />
-												<br />
-												<dir-pagination-controls boundary-links="false" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>
+						<br />
+						<!--<dir-pagination-controls boundary-links="false" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>-->
 
 
 
